@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function(){
-  let transactionObjArr = JSON.parse(localStorage.getItem("transactionData"));
+  let transactionObjArr = JSON.parse(localStorage.getItem("transactionesData"));
   for (i=0; i < transactionObjArr.length; i++) {
       insertRowInTransactionTable(transactionObjArr[i])
    }
@@ -16,14 +16,14 @@ e.preventDefault();
 let formacion = new FormData(form)
 let transactionObj= converFormDataToTransactionObj(formacion);
 
-if(localStorage.getItem('transactionData') === null) {
+if(localStorage.getItem('transactionesData') === null) {
   let transactionArray = [];
   transactionArray.push(transactionObj);
-  localStorage.setItem('transactionData', JSON.stringify(transactionArray));
+  localStorage.setItem('transactionesData', JSON.stringify(transactionArray));
 } else {
-  let transactionArray = JSON.parse(localStorage.getItem('transactionData'));
+  let transactionArray = JSON.parse(localStorage.getItem('transactionesData'));
   transactionArray.push(transactionObj);
-  localStorage.setItem('transactionData', JSON.stringify(transactionArray));
+  localStorage.setItem('transactionesData', JSON.stringify(transactionArray));
 }
 
 insertRowInTransactionTable(transactionObj)
@@ -77,11 +77,11 @@ function insertRowInTransactionTable(transactionObj) {
 }
 
 function deleteTransactionObj(transactionId) {
-  let transactionObjArr = JSON.parse(localStorage.getItem("transactionData"));
+  let transactionObjArr = JSON.parse(localStorage.getItem("transactionesData"));
   let transactionIndexArray = transactionObjArr.findIndex(element => element.transactionId === transactionId)
   transactionObjArr.splice(transactionIndexArray, 1)
   let transactionArrayJSON = JSON.stringify(transactionObjArr)
-  localStorage.setItem("transactionData", transactionArrayJSON)
+  localStorage.setItem("transactionesData", transactionArrayJSON)
 }
 
 
