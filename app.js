@@ -37,7 +37,7 @@ function converFormDataToTransactionObj(formacion) {
   return {
     "type": type,
     "descripcion": descripcion,
-    "monto": monto,
+    "monto": "$" + monto,
     "categoria": categoria
   }
 }
