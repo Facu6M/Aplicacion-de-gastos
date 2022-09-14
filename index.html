@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>App bills</title>
+ <link rel="icon" type="image/jpg" href="https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BUF">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+<h1>My bills app</h1>
+
+<main>
+
+
+<table id="tasks">
+<tr>
+  <th>Tipo</th>
+  <th>Descripcion</th>
+  <th>Dinero</th>
+  <th>Categoria</th>
+  <th>Borrar</th>
+</tr>
+
+
+</table>
+
+
+<form id="formTask">
+  <div id="form">
+ <label> Type of change </label>
+  <input id="type" type="radio" value="Entry" required name="typeTransaction"></input>
+  <label for="ingreso">Entry</label>
+  <input id="type" type="radio"  value="Egress" name="typeTransaction"></input>
+ <label for="egreso">Egress</label>
+ </div>
+
+<div id="form">
+<label for="description">descripcion</label>
+<input class="input" id="description" required name="description" placeholder="insert the description">
+</div>
+
+<div id="form">
+<label>el precio </label>
+<input class="input" id="amount" type="number" required name="monto" placeholder="insert the amount">
+</div>
+
+<div id="form">
+<label>categoria</label>
+<input class="input" id="category" required name="category" placeholder="what category is?">
+</div>
+
+<div id="form">
+<button class="button" >Enviar Informacion</button>
+</div>
+
+</form>
+
+</main>
+
+<aside></aside>
+
+    <script src="app.js"></script>
+  </body>
+</html>
